@@ -1,3 +1,4 @@
+import "./ShopList.css";
 import ListItem from "./src/ListItem"
 
 export default function ShopList({ items }) {
