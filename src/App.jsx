@@ -1,5 +1,5 @@
 import './App.css'
-import ShopList from '../ShopList'
+import ShopList from './ShopList'
 
 const items = [
   { id: 1, name: "milk", quantity: 2, completed: true },

@@ -1,10 +1,17 @@
+import { useState } from "react"
+
 export default function ListItem({ name, quantity, completed }) {
+
+    const [isCompleted, setIsCompleted] = useState(completed);
+    const handleTask = () => (setIsCompleted((currTask) => (!currTask)));
+
     const styles = {
-        color: completed ? "grey" : "red"
-        , textDecoration: completed ? "line-through" : "none"
+        color: isCompleted ? "grey" : "red"
+        , textDecoration: isCompleted ? "line-through" : "none"
+        , cursor: "pointer"
     }
     return (
-        <li style={styles}>
+        <li onClick={handleTask} style={styles}>
             {name} - {quantity}
         </li>
     )
