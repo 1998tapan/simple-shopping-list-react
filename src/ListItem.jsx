@@ -1,6 +1,6 @@
 import { useState } from "react"
 
-export default function ListItem({ name, quantity, completed }) {
+export default function ListItem({ id, name, quantity, completed }) {
 
     const [isCompleted, setIsCompleted] = useState(completed);
     const handleTask = () => (setIsCompleted((currTask) => (!currTask)));
@@ -11,7 +11,7 @@ export default function ListItem({ name, quantity, completed }) {
         , cursor: "pointer"
     }
     return (
-        <li onClick={handleTask} style={styles}>
+        <li id={id} onClick={handleTask} style={styles}>
             {name} - {quantity}
         </li>
     )

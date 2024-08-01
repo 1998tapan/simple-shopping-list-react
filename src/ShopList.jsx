@@ -17,10 +17,7 @@ export default function ShopList() {
                 <ul>
                     {items.map(item => (
                         <ListItem
-                            key={item.id}
-                            name={item.name}
-                            quantity={item.quantity}
-                            completed={item.completed}
+                            key={item.id} {...item}
                         />
                     ))}
                 </ul>

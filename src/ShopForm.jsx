@@ -1,6 +1,6 @@
-import { useState } from "react"
+import { useState } from "react";
 import "./ShopForm.css";
-
+import {v4 as uuid} from "uuid";
 
 export default function ShopForm({ addItem }) {
     const initialCart = () => ({ name: "", quantity: 0 })
@@ -13,7 +13,7 @@ export default function ShopForm({ addItem }) {
 
     const submitForm = (e) => {
         e.preventDefault();
-        addItem({ ...formData, completed: false });
+        addItem({ ...formData, completed: false, id:uuid() });
         setFormData(initialCart);
     }
 

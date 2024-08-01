@@ -12,5 +12,18 @@ h1 {
 
 ul {
     max-height: 300px;
+    max-width: 400px;
     overflow-y: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em;
+    margin: 1em auto;
+}
+
+li {
+    flex-basis: calc(50% - 0.5em);
+    /* flex-grow: 1; */
+    /* text-align: left; */
+    /* background-color: #fff; */
+    margin-bottom: 0.5em;
 }
