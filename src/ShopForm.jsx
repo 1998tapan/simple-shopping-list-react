@@ -1,9 +1,11 @@
 import { useState } from "react"
 import "./ShopForm.css";
 
+
 export default function ShopForm({ addItem }) {
+    const initialCart = () => ({ name: "", quantity: 0 })
     const [isEnabled, setIsEnabled] = useState(false);
-    const [formData, setFormData] = useState({ name: "", quantity: 0 });
+    const [formData, setFormData] = useState(initialCart);
 
     const handleChange = (e) => {
         setFormData(currData => ({ ...currData, [e.target.name]: e.target.value }))
@@ -11,9 +13,8 @@ export default function ShopForm({ addItem }) {
 
     const submitForm = (e) => {
         e.preventDefault();
-        console.log(formData);
         addItem({ ...formData, completed: false });
-
+        setFormData(initialCart);
     }
 
     return (
