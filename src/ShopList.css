@@ -26,4 +26,13 @@ li {
     /* text-align: left; */
     /* background-color: #fff; */
     margin-bottom: 0.5em;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.material-symbols-outlined {
+    font-size: large;
+    color: #e0e0e0;
+    cursor: pointer;
 }

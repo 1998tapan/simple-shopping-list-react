@@ -7,8 +7,14 @@ export default function ShopList() {
 
     const [items, setItems] = useState([]);
     const addItem = (i) => {
-        setItems(item => [...item, i])
+        setItems(items => [...items, i])
     };
+    const deleteItem = (id) => {
+        console.log("Deleting", id);
+        setItems(items => (
+            items.filter(i => i.id !== id)
+        ))
+    }
     return (
         <div>
             <div className="shop-container">
@@ -17,7 +23,7 @@ export default function ShopList() {
                 <ul>
                     {items.map(item => (
                         <ListItem
-                            key={item.id} {...item}
+                            key={item.id} deleteItem={deleteItem} {...item}
                         />
                     ))}
                 </ul>
